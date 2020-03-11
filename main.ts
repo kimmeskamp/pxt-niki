@@ -1,7 +1,7 @@
 /**
  * Niki, der Roboter
  */
-//% weight=100 color=#0fbc11
+//% weight=100 color=#0fbc11 icon="\uf14e"
 
 namespace niki {
 
@@ -32,7 +32,7 @@ namespace niki {
     /**
     * Erstelle Nikis Spielfeld und setze die im String angegebene Zahl von Token (0..9) auf die einzelnen Felder (Beginnend oben links). Beispiel: "1000011000111001111011111"
     */
-    //% block
+    //% block "erstelle Spielfeld"
     export function erstelleSpielfeld(s: string) {
         for (let i = 0; i < 5; i++) {
             for (let j = 0; j < 5; j++) {
@@ -55,7 +55,7 @@ namespace niki {
     /**
     * Erstelle ein Spielfeld mit einer zufälliger Verteilung von Token für Niki.
     */
-    //% block
+    //% block="erstelle zufälliges Spielfeld"
     export function erstelleSpielfeldZufall() {
         for (let i = 0; i < 5; i++) {
             for (let j = 0; j < 5; j++) {
@@ -107,7 +107,8 @@ namespace niki {
     /**
     * Setzt Niki auf die angegebenen Koordinaten mit Blick in die angegebene Richtung.
     */
-    //% block
+    //% block="Einschaltposition x %x| y %y| %richtung" 
+    //%  x.min=0 x.max=4 y.min=0 y.max=4
     export function einschaltenPosition(x: number, y: number, richtung: himmelsrichtungen): void {
         if (!eingeschaltet) {
             if (x >= 0 && x < 5) {
