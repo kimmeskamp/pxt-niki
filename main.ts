@@ -184,8 +184,8 @@ namespace niki {
     }
 	
 	/**
-    * Setzt Niki auf zufällige Koordinaten mit Blick in eine zufällige Richtung.
-    */
+     * Setzt Niki auf zufällige Koordinaten mit Blick in eine zufällige Richtung.
+     */
     //% blockId=einschaltenZufall block="schalte ein zufällig"
     export function einschaltenZufall(): void {
         if (!eingeschaltet) {
