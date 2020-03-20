@@ -182,6 +182,24 @@ namespace niki {
             basic.showIcon(IconNames.Sad)
         }
     }
+	
+	/**
+    * Setzt Niki auf zufällige Koordinaten mit Blick in eine zufällige Richtung.
+    */
+    //% blockId=einschaltenZufall block="schalte ein zufällig"
+    export function einschaltenZufall(): void {
+        if (!eingeschaltet) {
+            x = Math.random(5)
+            y = Math.random(5)
+            richtung = Math.random(4)
+            led.plot(x, y)
+            eingeschaltet = true
+			fehler = false
+        } else {
+			fehler = true
+            basic.showIcon(IconNames.Sad)
+		}
+    }
 
     /**
      * Gehe in der aktuellen Richtung ein Feld vor. Niki muss eingeschaltet sein und darf nicht vor eine Wand laufen.
