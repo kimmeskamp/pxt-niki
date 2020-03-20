@@ -1,8 +1,8 @@
 /**
  * Niki, der Roboter
+ * Thorsten Kimmeskamp, 20.03.2020
  */
 //% weight=100 color=#0fbc11 icon="\uf14e"
-
 namespace niki {
 
     export enum himmelsrichtungen {
@@ -26,6 +26,32 @@ namespace niki {
 
     let spielfeld: number[][] = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
 
+
+    /**
+     * Handsteuerung: gehe vor, wenn Taste A gedrückt
+     */
+    input.onButtonPressed(Button.A, () => {
+        geheVor()
+    })
+
+    /**
+     * Handsteuerung: drehe links, wenn Taste B gedrückt
+     */
+    input.onButtonPressed(Button.B, () => {
+        dreheLinks()
+    })
+
+    /**
+     * Handsteuerung: wenn Taste A+B gedrückt: nimm auf, falls Platz belegt, sonst lege ab
+     */
+    input.onButtonPressed(Button.AB, () => {
+        if (platzBelegt()) {
+            nimmAuf()
+        } else {
+            legeAb()
+        }
+    })
+	
 
     /**
      * Erstelle ein leeres Spielfeld. Niki darf nicht eingeschaltet sein.
